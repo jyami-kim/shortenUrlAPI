@@ -14,7 +14,7 @@ public class Base62ConvertService {
             "Y","Z"
     };
 
-    private static final int default_plus = 1000000;
+    private static final int default_plus = 3000000;
 
     private static final int base = 62;
 

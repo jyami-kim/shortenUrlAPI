@@ -27,15 +27,6 @@ public class UrlController {
 
 
     @PostMapping("")
-//    public ResponseEntity saveLink (@RequestBody final ShortUrl originLink){
-//        try{
-//            log.info("postmapping : " + originLink.toString());
-//            return new ResponseEntity(urlService.saveLink(originLink.getLink_url()), HttpStatus.OK);
-//        }catch (Exception e){
-//            log.error(e.getMessage());
-//            return new ResponseEntity(DefaultRes.FAIL_DEFAULT_RES, HttpStatus.OK);
-//        }
-//    }
         public ResponseEntity saveLink (@RequestBody final ShortUrl originLink){
         try{
             log.info("postmapping : " + originLink.toString());

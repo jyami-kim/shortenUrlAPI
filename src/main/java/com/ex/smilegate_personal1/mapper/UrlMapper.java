@@ -11,13 +11,8 @@ public interface UrlMapper {
     String get_pull_url(@Param("idshort") final long idshort);
 
 
-//    @Insert("INSERT INTO short(link_url) VALUE(#{originUrl});")
-//    @Options(useGeneratedKeys=true, keyColumn="idshort")
-//    int save_link(@Param("originUrl") final String originUrl);
-
-
     @Insert("INSERT INTO short(link_url) VALUE(#{shortUrl.link_url});")
-    @Options(useGeneratedKeys=true, keyColumn = "shortUrl.idshort")
+    @Options(useGeneratedKeys=true, keyProperty = "shortUrl.idshort")
     int save_link(@Param("shortUrl") final ShortUrl shortUrl);
 
 }
