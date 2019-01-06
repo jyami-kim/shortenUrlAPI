@@ -3,6 +3,8 @@ package com.ex.smilegate_personal1.api;
 import com.ex.smilegate_personal1.dto.ShortUrl;
 import com.ex.smilegate_personal1.model.DefaultRes;
 import com.ex.smilegate_personal1.service.UrlService;
+import com.ex.smilegate_personal1.utils.ResponseMessage;
+import com.ex.smilegate_personal1.utils.StatusCode;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +19,11 @@ public class UrlController {
 
     UrlController(final UrlService urlService){
         this.urlService = urlService;
+    }
+
+    @GetMapping("/test")
+    public ResponseEntity getTest(){
+        return new ResponseEntity(new DefaultRes<>(StatusCode.OK, ResponseMessage.READ_LINK, "successful"),HttpStatus.OK);
     }
 
     @GetMapping("/{shortLink}")
