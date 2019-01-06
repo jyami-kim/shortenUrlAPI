@@ -34,12 +34,14 @@ public class UrlService {
         return(new DefaultRes(StatusCode.OK, ResponseMessage.CREAT_LINK, base62ConvertService.toBase62(base10)));
     }
 
-    public DefaultRes getPullLink(final String shortLink){
-
+    public String getPullLink(final String shortLink){
+        log.warn(shortLink);
         //decoding 결과 저장
         long base10 = base62ConvertService.fromBase62(shortLink);
-
-        return (new DefaultRes(StatusCode.OK, ResponseMessage.READ_LINK, urlMapper.get_pull_url(base10)));
+        log.error("decoding 결과: " + base10);
+        String result = urlMapper.get_pull_url(base10);
+        log.error("original messgae"+result);
+        return result;
     }
 
 }

@@ -21,18 +21,6 @@ public class UrlController {
         this.urlService = urlService;
     }
 
-    @GetMapping("/test")
-    public ResponseEntity getTest(){
-        return new ResponseEntity(new DefaultRes<>(StatusCode.OK, ResponseMessage.READ_LINK, "successful"),HttpStatus.OK);
-    }
-
-    @GetMapping("/{shortLink}")
-    public ResponseEntity getPullLink(@PathVariable (value = "shortLink") final String shortLink){
-        return new ResponseEntity(urlService.getPullLink(shortLink),HttpStatus.OK);
-        //pullLink를 data에 저장! 클라에서는 이 link로 바로 redirection
-    }
-
-
     @PostMapping("")
         public ResponseEntity saveLink (@RequestBody final ShortUrl originLink){
         try{
@@ -44,3 +32,4 @@ public class UrlController {
         }
     }
 }
+

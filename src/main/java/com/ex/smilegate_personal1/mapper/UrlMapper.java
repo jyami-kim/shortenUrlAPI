@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.*;
 @Mapper
 public interface UrlMapper {
 
-    @Select("SELECT link_url FROM shortURL.short WHERE idshort = #{idshort};")
+    @Select("SELECT link_url FROM short WHERE idshort = #{idshort};")
     String get_pull_url(@Param("idshort") final long idshort);
 
 

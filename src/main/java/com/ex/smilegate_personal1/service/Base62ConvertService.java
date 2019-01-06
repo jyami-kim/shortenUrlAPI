@@ -36,16 +36,14 @@ public class Base62ConvertService {
     long fromBase62(String base62){ //decoding
         long mul = 1;
         long base10 =0;
-        int pos =0;
+        int pos;
 
         for(int i=base62.length()-1; i>=0; i--){
             pos = Arrays.asList(elements).indexOf(base62.substring(i, i+1));
             base10 += (long) pos*mul;
             mul *= base;
         }
-
         base10 -= default_plus;
         return base10;
     }
-
 }
