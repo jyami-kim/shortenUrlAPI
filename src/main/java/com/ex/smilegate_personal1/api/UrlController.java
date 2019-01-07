@@ -28,35 +28,26 @@ public class UrlController {
         this.urlService = urlService;
     }
 
+    @GetMapping("/count/create")
+    public ResponseEntity count_create(){
+        try{
+            return new ResponseEntity(urlService.count_create(), HttpStatus.OK);
+        }catch (Exception e){
+            log.error(e.getMessage());
+            return new ResponseEntity(FAIL_DEFAULT_RES, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 
+    @GetMapping("/count/redirect")
+    public ResponseEntity count_redirect(){
+        try{
+            return new ResponseEntity(urlService.count_redirect(), HttpStatus.OK);
+        }catch (Exception e){
+            log.error(e.getMessage());
+            return new ResponseEntity(FAIL_DEFAULT_RES, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 
-//    @GetMapping("checking")
-//    public boolean checkResponse(@RequestBody final ShortUrl shortUrl){
-//        try{
-//
-//            log.info(shortUrl.getLink_url().getClass().getName());
-//            URL url = new URL(shortUrl.getLink_url());
-//
-//
-////            URL url = new URL("http://example.com");
-//            HttpURLConnection connection = (HttpURLConnection)url.openConnection();
-//            connection.setRequestMethod("GET");
-//            connection.connect();
-//
-//            int code = connection.getResponseCode();
-//            log.info("Response code of the object is "+code);
-//            if (code==200)
-//            {
-//                log.info("OK");
-//                return true;
-//            }
-//            return false;
-//
-//        }catch(Exception e){
-//            log.error(e.getMessage());
-//            return false;
-//        }
-//    }
 
     @PostMapping("")
         public ResponseEntity saveLink (@RequestBody final ShortUrl originLink){
