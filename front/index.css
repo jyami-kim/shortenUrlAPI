@@ -1,0 +1,20 @@
+
+html, body {
+    margin: 5px;
+    padding: 0;
+    background-color: #eeeeee
+}
+
+
+  .input-field :focus {
+    border-bottom: 1px solid #ff8a80;
+    box-shadow: 0 1px 0 0 black;
+  }
+
+  nav .brand-logo{
+      margin-left: 20px;
+  }
+
+  #result{
+      font-weight: bold
+  }

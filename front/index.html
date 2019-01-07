@@ -1,0 +1,113 @@
+<html>
+
+<head>
+
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+
+    <nav>
+        <div class="nav-wrapper red accent-1">
+            <a href="#" class="brand-logo">MJ SHORTENER</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down ">
+                <li><a href="#form_input">Make Shorten</a></li>
+                <li><a href="#statistics_1">Statistics_making</a></li>
+                <li><a href="#statistics_2">Statistics_redirect</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div id="form_input">
+            <div class="row"></div>
+            <div class="row">
+                <div class="card  white">
+                    <div class="card-content black-text">
+                        <div class="row">
+                            <div class="col m10">
+                                <input v-model="message" placeholder="Your original URL here">
+                            </div>
+                            <div class="col m2">
+                                <button v-on:click="getDataFromApi" class="btn waves-effect waves-light  red accent-1"
+                                    type="submit" name="action">SHORTEN
+                                    URL
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </div>
+                        </div>
+                        <span id="result" class="card-title"></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="card white">
+                <div class="card-content black-text">
+                    <div id="chartContainer_redirect" style="height: 370px; width: 100%;"></div>
+                    <table class="highlight">
+                        <thead>
+                            <tr>
+                                <th>Alias</th>
+                                <th>Shorten URL</th>
+                                <th>Original URL</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="redirect_table">
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="card  white">
+                <div class="card-content black-text">
+                    <div id="chartContainer_create" style="height: 370px; width: 100%;"></div>
+                    <table class="highlight">
+                        <thead>
+                            <tr>
+                                <th>Alias</th>
+                                <th>Shorten URL</th>
+                                <th>Original URL</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="create_table">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
