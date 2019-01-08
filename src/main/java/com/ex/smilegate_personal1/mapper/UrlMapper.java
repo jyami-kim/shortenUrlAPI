@@ -28,6 +28,6 @@ public interface UrlMapper {
     @Options(useGeneratedKeys=true, keyProperty = "shortUrl.idshort")
     int save_link(@Param("shortUrl") final ShortUrl shortUrl);
 
-    @Select("SELECT * FROM shortURL.short WHERE link_url = #{link}")
+    @Select("SELECT * FROM short WHERE link_url = #{link}")
     ShortUrl get_previous_url(@Param("link")final String link);
 }

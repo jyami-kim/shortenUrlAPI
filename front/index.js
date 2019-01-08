@@ -7,14 +7,15 @@ new Vue({
         message: ''
     },
     methods: {
+        // 13.209.168.93
         getDataFromApi(){
-            axios.post('http://13.209.168.93:8081/', {
+            axios.post('http://127.0.0.1:8081/', {
                 link_url : this.message
             })
             .then(function(response) {
                 console.log(response);
                 if(response.data.status == 200){
-                    result = "http://13.209.168.93:8081/"+response.data.data
+                    result = "http://127.0.0.1:8081/"+response.data.data
 
                 }else{
                     result = "It is wrong URL"
@@ -39,7 +40,7 @@ var count = new Vue({
     },
     methods: {
         redirect() {
-            axios.get('http://13.209.168.93:8081/count/redirect')
+            axios.get('http://127.0.0.1:8081/count/redirect')
             .then(function(response){
                 console.log(response);
                 redirectArray = response.data.data;
@@ -73,7 +74,7 @@ var count = new Vue({
 
         },
         create(){
-            axios.get('http://13.209.168.93:8081/count/create')
+            axios.get('http://127.0.0.1:8081/count/create')
             .then(function(response){
                 console.log(response);
                 createArray = response.data.data;
